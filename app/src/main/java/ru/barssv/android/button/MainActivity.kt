@@ -1,5 +1,7 @@
 package ru.barssv.android.button
 
+import android.media.RingtoneManager
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -14,6 +16,9 @@ class MainActivity : AppCompatActivity() {
     }
     fun onClickResult(view: View) {
         binding.text.text = "Кнопка Работает"
+        val notificationUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE)
+        val ringtone = RingtoneManager.getRingtone(this, notificationUri)
+        ringtone.play()
 
 
     }
